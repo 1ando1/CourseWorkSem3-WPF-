@@ -1,0 +1,108 @@
+﻿<Window x:Class="Paint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu">
+            <MenuItem Header="Save" x:Name="SaveCm" InputGestureText="Ctrl+S" Click="SaveCm_Click"></MenuItem>
+            <MenuItem Header="Exit" x:Name="ExitCm" InputGestureText="Alt+F4" Click="ExitCm_Click"></MenuItem>
+            <MenuItem Header="Minimize" x:Name="MinimizeCm" Click="MinimizeCm_Click"></MenuItem>
+            <MenuItem Header="Maximize" x:Name="MaximizeCm" Click="MaximizeCm_Click"></MenuItem>
+            <MenuItem x:Name="EraserCm" Header="Eraser" Click="EraserCm_Click"></MenuItem>
+            <MenuItem Header="Change Color">
+                <MenuItem x:Name="RedCm" Header="Red" Foreground="Red" Click="RedCm_Click"></MenuItem>
+                <MenuItem x:Name="GreenCm" Header="Green" Foreground="Green" Click="GreenCm_Click"></MenuItem>
+                <MenuItem x:Name="BlueCm" Header="Blue" Foreground="Blue" Click="BlueCm_Click"></MenuItem>
+                <MenuItem x:Name="YellowCm" Header="Yellow" Foreground="Yellow" Click="YellowCm_Click"></MenuItem>
+                <MenuItem x:Name="WhiteCm" Header="White" Foreground="Black" Click="WhiteCm_Click"></MenuItem>
+                <MenuItem x:Name="PinkCm" Header="Pink" Foreground="Pink" Click="PinkCm_Click"></MenuItem>
+                <MenuItem x:Name="MagentaCm" Header="Magenta" Foreground="Magenta" Click="MagentaCm_Click"></MenuItem>
+                <MenuItem x:Name="DefaultCm" Header="Default(Black)" Foreground="Black" Click="DefaultCm_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Change Background Color">
+                <MenuItem x:Name="RedBgCm" Header="Red" Foreground="Red" Click="RedBgCm_Click"></MenuItem>
+                <MenuItem x:Name="GreenBgCm" Header="Green" Foreground="Green" Click="GreenBgCm_Click"></MenuItem>
+                <MenuItem x:Name="BlueBgCm" Header="Blue" Foreground="Blue" Click="BlueBgCm_Click"></MenuItem>
+                <MenuItem x:Name="YellowBgCm" Header="Yellow" Foreground="Yellow" Click="YellowBgCm_Click"></MenuItem>
+                <MenuItem x:Name="BlackBgCm" Header="Black" Foreground="Black" Click="BlackBgCm_Click"></MenuItem>
+                <MenuItem x:Name="PinkBgCm" Header="Pink" Foreground="Pink" Click="PinkBgCm_Click"></MenuItem>
+                <MenuItem x:Name="MagentaBgCm" Header="Magenta" Foreground="Magenta" Click="MagentaBgCm_Click"></MenuItem>
+                <MenuItem x:Name="DefaultBgCm" Header="Default(White)" Foreground="Black" Click="DefaultBgCm_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Width">
+                <MenuItem x:Name="W5Cm" Header="5" Click="W5Cm_Click"></MenuItem>
+                <MenuItem x:Name="W10Cm" Header="10" Click="W10Cm_Click"></MenuItem>
+                <MenuItem x:Name="W12Cm" Header="12" Click="W12Cm_Click"></MenuItem>
+                <MenuItem x:Name="W16Cm" Header="16" Click="W16Cm_Click"></MenuItem>
+                <MenuItem x:Name="W19Cm" Header="19" Click="W19Cm_Click"></MenuItem>
+                <MenuItem x:Name="W25Cm" Header="25" Click="W25Cm_Click"></MenuItem>
+                <MenuItem x:Name="W36Cm" Header="36" Click="W36Cm_Click"></MenuItem>
+                <MenuItem x:Name="W45Cm" Header="45" Click="W45Cm_Click"></MenuItem>
+                <MenuItem x:Name="W48Cm" Header="48" Click="W48Cm_Click"></MenuItem>
+                <MenuItem x:Name="W52Cm" Header="52" Click="W52Cm_Click"></MenuItem>
+                <MenuItem x:Name="W59Cm" Header="59" Click="W59Cm_Click"></MenuItem>
+                <MenuItem x:Name="W61Cm" Header="61" Click="W61Cm_Click"></MenuItem>
+                <MenuItem x:Name="W66Cm" Header="66" Click="W66Cm_Click"></MenuItem>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+    <DockPanel>
+        <Menu IsMainMenu="True" DockPanel.Dock="Top" Height="20">
+            <MenuItem Header="File">
+                <MenuItem Header="Save" x:Name="Save" InputGestureText="Ctrl+S" Click="Save_Click"></MenuItem>
+                <MenuItem Header="Exit" x:Name="Exit" InputGestureText="Alt+F4" Click="Exit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Color">
+                    <MenuItem Header="Change Color">
+                        <MenuItem x:Name="Red" Header="Red" Foreground="Red" Click="Red_Click"></MenuItem>
+                        <MenuItem x:Name="Green" Header="Green" Foreground="Green" Click="Green_Click"></MenuItem>
+                        <MenuItem x:Name="Blue" Header="Blue" Foreground="Blue" Click="Blue_Click"></MenuItem>
+                        <MenuItem x:Name="Yellow" Header="Yellow" Foreground="Yellow" Click="Yellow_Click"></MenuItem>
+                        <MenuItem x:Name="White" Header="White" Foreground="Black" Click="White_Click"></MenuItem>
+                        <MenuItem x:Name="Pink" Header="Pink" Foreground="Pink" Click="Pink_Click"></MenuItem>
+                        <MenuItem x:Name="Magenta" Header="Magenta" Foreground="Magenta" Click="Magenta_Click"></MenuItem>
+                        <MenuItem x:Name="Default" Header="Default(Black)" Foreground="Black" Click="Default_Click"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Change Background Color">
+                        <MenuItem x:Name="RedBg" Header="Red" Foreground="Red" Click="RedBg_Click"></MenuItem>
+                        <MenuItem x:Name="GreenBg" Header="Green" Foreground="Green" Click="GreenBg_Click"></MenuItem>
+                        <MenuItem x:Name="BlueBg" Header="Blue" Foreground="Blue" Click="BlueBg_Click"></MenuItem>
+                        <MenuItem x:Name="YellowBg" Header="Yellow" Foreground="Yellow" Click="YellowBg_Click"></MenuItem>
+                        <MenuItem x:Name="BlackBg" Header="Black" Foreground="Black" Click="BlackBg_Click"></MenuItem>
+                        <MenuItem x:Name="PinkBg" Header="Pink" Foreground="Pink" Click="PinkBg_Click"></MenuItem>
+                        <MenuItem x:Name="MagentaBg" Header="Magenta" Foreground="Magenta" Click="MagentaBg_Click"></MenuItem>
+                        <MenuItem x:Name="DefaultBg" Header="Default(White)" Foreground="Black" Click="DefaultBg_Click"></MenuItem>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Tools">
+                    <MenuItem x:Name="Eraser" Header="Eraser" Click="Eraser_Click"></MenuItem>
+                    <MenuItem Header="Width">
+                        <MenuItem x:Name="W5" Header="5" Click="W5_Click"></MenuItem>
+                        <MenuItem x:Name="W10" Header="10" Click="W10_Click"></MenuItem>
+                        <MenuItem x:Name="W12" Header="12" Click="W12_Click"></MenuItem>
+                        <MenuItem x:Name="W16" Header="16" Click="W16_Click"></MenuItem>
+                        <MenuItem x:Name="W19" Header="19" Click="W19_Click"></MenuItem>
+                        <MenuItem x:Name="W25" Header="25" Click="W25_Click"></MenuItem>
+                        <MenuItem x:Name="W36" Header="36" Click="W36_Click"></MenuItem>
+                        <MenuItem x:Name="W45" Header="45" Click="W45_Click"></MenuItem>
+                        <MenuItem x:Name="W48" Header="48" Click="W48_Click"></MenuItem>
+                        <MenuItem x:Name="W52" Header="52" Click="W52_Click"></MenuItem>
+                        <MenuItem x:Name="W59" Header="59" Click="W59_Click"></MenuItem>
+                        <MenuItem x:Name="W61" Header="61" Click="W61_Click"></MenuItem>
+                        <MenuItem x:Name="W66" Header="66" Click="W66_Click"></MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Minimize" x:Name="Minimize" Click="Minimize_Click"></MenuItem>
+                <MenuItem Header="Maximize" x:Name="Maximize" Click="Maximize_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <InkCanvas x:Name="Holst" DockPanel.Dock="Bottom" ContextMenu="{StaticResource ContextMenu}"></InkCanvas>
+    </DockPanel>
+</Window>
